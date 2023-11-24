@@ -6,7 +6,22 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        kalam: ["var(--font-kalam)"],
+        heebo: ["var(--font-heebo)"],
+      },
+      colors: {
+        "custom-primary": "#fff",
+        "custom-secondary": "#F5F6F6",
+        "custom-terciary": "#7DFFAF",
+        "b-primary": "#171023",
+        "b-secondary": "#2C243B",
+        "b-terciary": "#322844",
+      },
+    },
+  },
   plugins: [],
 };
 export default config;
