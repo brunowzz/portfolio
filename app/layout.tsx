@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${kalam.variable} ${heebo.variable}`}>
-        <main className="bg-b-primary min-h-screen">{children}</main>
+        <main className="min-h-screen bg-b-primary">{children}</main>
       </body>
     </html>
   );
