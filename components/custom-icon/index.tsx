@@ -1,3 +1,5 @@
+"use client";
+
 import { IconContext } from "react-icons";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
