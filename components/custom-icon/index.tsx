@@ -10,6 +10,7 @@ import {
   FaJsSquare,
   FaReact,
   FaSass,
+  FaRegArrowAltCircleUp,
 } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { SiStyledcomponents, SiTailwindcss } from "react-icons/si";
@@ -33,6 +34,7 @@ export default function CustomIcon({ icon, color, size }: Icon) {
     styledcomponents: SiStyledcomponents,
     tailwind: SiTailwindcss,
     sass: FaSass,
+    top: FaRegArrowAltCircleUp,
   };
 
   const IconComponent = iconMapping[icon];
