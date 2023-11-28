@@ -20,6 +20,9 @@ const config: Config = {
         "b-secondary": "#2C243B",
         "b-terciary": "#322844",
       },
+      minHeight: {
+        "39": "39rem",
+      },
     },
   },
   plugins: [],

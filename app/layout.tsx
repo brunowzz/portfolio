@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Kalam, Heebo } from "next/font/google";
 
 import Header from "@/components/header";
+import GoToTop from "@/components/go-to-top";
 
 const kalam = Kalam({
   subsets: ["latin"],
@@ -24,11 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={`${kalam.variable} ${heebo.variable}`}>
-        <main className="flex min-h-screen flex-col items-center bg-b-primary">
-          <Header />
-          {children}
-        </main>
+      <body
+        className={`${kalam.variable} ${heebo.variable} className="flex min-h-screen flex-col items-center scroll-smooth bg-b-primary px-6`}
+      >
+        <Header />
+        <main className="flex w-full flex-col items-center">{children}</main>
+        <GoToTop />
       </body>
     </html>
   );

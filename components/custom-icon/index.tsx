@@ -11,6 +11,7 @@ import {
   FaReact,
   FaSass,
   FaRegArrowAltCircleUp,
+  FaCode,
 } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { SiStyledcomponents, SiTailwindcss } from "react-icons/si";
@@ -35,6 +36,7 @@ export default function CustomIcon({ icon, color, size }: Icon) {
     tailwind: SiTailwindcss,
     sass: FaSass,
     top: FaRegArrowAltCircleUp,
+    code: FaCode,
   };
 
   const IconComponent = iconMapping[icon];
