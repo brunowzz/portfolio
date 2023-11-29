@@ -6,6 +6,8 @@ import ContainerItens from "@/components/container-itens";
 import Technologies from "@/components/technologies";
 import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
+import Form from "@/components/form";
+import Socials from "@/components/socials";
 
 export default function Home() {
   return (
@@ -124,6 +126,58 @@ export default function Home() {
           <Button>Ver Todos</Button>
         </div>
       </section>
+
+      <ContainerItens>
+        <section className="sm:flex sm:justify-between">
+          <div className="flex flex-col gap-1 sm:w-52 md:w-60 lg:w-96 xl:w-[538px]">
+            <figure className="w-52">
+              <Image
+                src="/avatar.svg"
+                className="h-full w-full"
+                width={200}
+                height={170}
+                alt="Avatar de Bruno Barreiras"
+              />
+            </figure>
+            <Subtitle>Contato</Subtitle>
+            <h3 className="font-heebo text-sm font-extrabold text-custom-primary md:text-base lg:text-lg xl:text-xl">
+              Gostou do meu trabalho?
+            </h3>
+
+            <p className="font-heebo text-sm font-medium text-custom-primary md:text-base lg:text-lg xl:text-xl">
+              Envie-me um e-mail para{" "}
+              <a
+                href="mailto:brunovbarreiras@gmail.com"
+                className="text-custom-terciary transition-all hover:opacity-80"
+                target="_blank"
+              >
+                {" "}
+                brunovbarreiras@gmail.com{" "}
+              </a>{" "}
+              ou entre em contato através das minhas redes sociais.
+            </p>
+
+            <span className="flex gap-2">
+              <Socials
+                urlSocial="https://github.com/brunowzz"
+                nameSocial="GitHub"
+                iconName="github"
+              />
+              <Socials
+                urlSocial="https://www.linkedin.com/in/brunobarreiras/"
+                nameSocial="LinkedIn"
+                iconName="linkedin"
+              />
+              <Socials
+                urlSocial="https://www.instagram.com/brunowzz/"
+                nameSocial="Instagram"
+                iconName="instagram"
+              />
+            </span>
+          </div>
+          <Form />
+        </section>
+      </ContainerItens>
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Form() {
       />
       <textarea
         placeholder="Sua Mensagem"
-        className="h-16 w-full resize-none rounded-lg border-none bg-b-secondary p-3 font-heebo font-light text-custom-primary outline-none focus:border focus:border-solid focus:border-custom-terciary md:h-32"
+        className="h-16 w-full resize-none rounded-lg border-none bg-b-secondary p-3 font-heebo font-light text-custom-primary outline-none focus:border focus:border-solid focus:border-custom-terciary md:h-32 lg:h-40"
       ></textarea>
       <Button typeButton="submit">Enviar</Button>
     </form>
