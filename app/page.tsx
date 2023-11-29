@@ -129,7 +129,7 @@ export default function Home() {
 
       <ContainerItens>
         <section className="sm:flex sm:justify-between">
-          <div className="flex flex-col gap-1 sm:w-52 md:w-60 lg:w-96 xl:w-[538px]">
+          <div className="flex flex-col gap-1 sm:w-52 md:w-60 lg:w-96 lg:gap-3 xl:w-[538px]">
             <figure className="w-52">
               <Image
                 src="/avatar.svg"

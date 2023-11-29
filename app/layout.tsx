@@ -4,6 +4,7 @@ import { Kalam, Heebo } from "next/font/google";
 
 import Header from "@/components/header";
 import GoToTop from "@/components/go-to-top";
+import Footer from "@/components/footer";
 
 const kalam = Kalam({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         <main className="flex w-full flex-col items-center">{children}</main>
         <GoToTop />
+        <Footer />
       </body>
     </html>
   );
