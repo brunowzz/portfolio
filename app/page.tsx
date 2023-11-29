@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Button from "@/components/button";
 import CustomIcon from "@/components/custom-icon";
@@ -123,12 +124,14 @@ export default function Home() {
         </article>
 
         <div className="flex justify-center">
-          <Button>Ver Todos</Button>
+          <Link href="/projects">
+            <Button>Ver Todos</Button>
+          </Link>
         </div>
       </section>
 
       <ContainerItens>
-        <section className="sm:flex sm:justify-between">
+        <section className="sm:flex sm:justify-between" id="contact">
           <div className="flex flex-col gap-1 sm:w-52 md:w-60 lg:w-96 lg:gap-3 xl:w-[538px]">
             <figure className="w-52">
               <Image

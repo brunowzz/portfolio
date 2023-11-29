@@ -25,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scroll-smooth">
       <body
-        className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center scroll-smooth px-6`}
+        className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center px-6`}
       >
         <Header />
         <main className="flex w-full flex-col items-center">{children}</main>
