@@ -24,7 +24,7 @@ const Header = () => {
           />
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-10 scroll-smooth md:flex">
           <Link
             className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
             href="/"
@@ -34,7 +34,7 @@ const Header = () => {
 
           <Link
             className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-            href="/"
+            href="/#about"
           >
             Sobre
           </Link>
@@ -48,7 +48,7 @@ const Header = () => {
 
           <Link
             className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-            href="/"
+            href="/#contact"
           >
             Contato
           </Link>

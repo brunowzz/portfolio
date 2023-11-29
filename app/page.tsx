@@ -66,7 +66,7 @@ export default function Home() {
         </figure>
       </section>
 
-      <ContainerItens>
+      <ContainerItens id="about">
         <section className="flex flex-wrap items-center justify-between">
           <figure className="w-full md:w-[290px] lg:w-[330px] xl:w-[450px] 2xl:w-[550px] ">
             <Image
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ContainerItens>
+      <ContainerItens id="contact">
         <section className="sm:flex sm:justify-between" id="contact">
           <div className="flex flex-col gap-1 sm:w-52 md:w-60 lg:w-96 lg:gap-3 xl:w-[538px]">
             <figure className="w-52">
