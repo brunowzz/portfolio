@@ -2,7 +2,7 @@ import CustomIcon from "../custom-icon";
 
 export default function Technologies() {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-wrap items-center gap-3">
       <a href="https://www.typescriptlang.org/docs/" target="_blank">
         <abbr title="TypeScript">
           <CustomIcon icon="typescript" size="35" color="#9955e8" />

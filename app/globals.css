@@ -20,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -30,5 +30,15 @@ body {
 }
 
 .height {
-    min-height: 39rem;
+    min-height: 45rem;
+}
+
+@layer utilities {
+    .bg-radial-gradient {
+        background-image: radial-gradient(circle, rgba(7, 2, 91, 1) 0%, rgba(23, 16, 35, 1) 35%, rgba(29, 3, 73, 1) 100%);
+    }
+
+    .shadowContainer {
+        box-shadow: 0px 4px 4px 0px #8A42DB;
+    }
 }

@@ -19,6 +19,7 @@ const config: Config = {
         "b-primary": "#171023",
         "b-secondary": "#2C243B",
         "b-terciary": "#322844",
+        "b-quaternary": "#8A42DB",
       },
       minHeight: {
         "39": "39rem",

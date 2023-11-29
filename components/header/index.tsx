@@ -13,8 +13,8 @@ const Header = () => {
   };
 
   return (
-    <header className="flex h-24 w-full items-center justify-center shadow-2xl">
-      <section className="container flex items-center justify-between bg-b-primary px-4">
+    <header className="flex h-24 w-full items-center justify-center rounded-lg shadow-2xl">
+      <section className="container flex items-center justify-between px-4">
         <Link href="/">
           <Image
             src="/logo.svg"

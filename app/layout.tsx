@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${kalam.variable} ${heebo.variable} className="flex min-h-screen flex-col items-center scroll-smooth bg-b-primary px-6`}
+        className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center scroll-smooth px-6`}
       >
         <Header />
         <main className="flex w-full flex-col items-center">{children}</main>
