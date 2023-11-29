@@ -89,7 +89,7 @@ const Header = () => {
 
             <Link
               className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/"
+              href="/#about"
               onClick={() => setIsOpen(false)}
             >
               Sobre
@@ -105,7 +105,7 @@ const Header = () => {
 
             <Link
               className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/"
+              href="/#contact"
               onClick={() => setIsOpen(false)}
             >
               Contato

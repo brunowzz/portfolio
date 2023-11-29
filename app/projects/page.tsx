@@ -14,7 +14,7 @@ export default function ProjectsPage() {
             Aqui estão todos os projetos que desenvolvi ou participei
           </h1>
 
-          <Link href="/">
+          <Link href="/#contact">
             <button className="h-12 w-44 rounded-lg bg-custom-terciary font-heebo text-xl font-medium text-black hover:opacity-80">
               Entre em Contato
             </button>
