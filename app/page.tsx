@@ -4,6 +4,8 @@ import Button from "@/components/button";
 import CustomIcon from "@/components/custom-icon";
 import ContainerItens from "@/components/container-itens";
 import Technologies from "@/components/technologies";
+import Subtitle from "@/components/subtitle";
+import CardProjects from "@/components/card-projects";
 
 export default function Home() {
   return (
@@ -77,9 +79,7 @@ export default function Home() {
             <Technologies />
 
             <span>
-              <h2 className="font-kalam text-3xl font-bold text-custom-terciary lg:text-4xl xl:text-5xl">
-                Sobre mim
-              </h2>
+              <Subtitle>Sobre mim</Subtitle>
 
               <h3 className="font-heebo text-base font-black text-custom-primary lg:text-lg xl:text-xl">
                 Goiânia, Go
@@ -104,6 +104,26 @@ export default function Home() {
           </div>
         </section>
       </ContainerItens>
+
+      <section className="container mt-14 w-full">
+        <div className="text-center">
+          <Subtitle>Projetos</Subtitle>
+
+          <h3 className="mt-2 font-heebo text-base font-medium text-custom-primary">
+            Veja todos os meus Projetos
+          </h3>
+        </div>
+
+        <article className="my-8 w-full sm:flex sm:justify-between">
+          <CardProjects />
+          <CardProjects />
+          <CardProjects />
+        </article>
+
+        <div className="flex justify-center">
+          <Button>Ver Todos</Button>
+        </div>
+      </section>
     </>
   );
 }
