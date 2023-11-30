@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@/components/button";
 
@@ -34,23 +36,63 @@ const createSchema = z.object({
 type CreateFormData = z.infer<typeof createSchema>;
 
 export default function Form() {
-  const [output, setOutput] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<CreateFormData>({
     resolver: zodResolver(createSchema),
   });
 
-  function createForm(data: any) {
-    setOutput(JSON.stringify(data, null, 2));
+  async function sendEmail(data: any) {
+    try {
+      const emailData = {
+        name: data.name,
+        email: data.email,
+        message: data.area,
+      };
+
+      const result = await emailjs.send(
+        "service_jnnorjc",
+        "template_53k9jl9",
+        emailData,
+        "G3zjYgjnWd519N3dk",
+      );
+
+      toast("😃 Formulário enviado com sucesso!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      reset();
+    } catch (error) {
+      toast("❌ Erro: formulário não enviado...", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      console.error();
+    }
   }
 
   return (
     <>
+      <ToastContainer />
       <form
-        onSubmit={handleSubmit(createForm)}
+        onSubmit={handleSubmit(sendEmail)}
         className="mt-4 flex flex-col gap-2 sm:w-64 md:w-96 xl:w-[33rem] xl:gap-6"
       >
         <div>
