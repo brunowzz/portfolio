@@ -10,6 +10,13 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          type: "text",
+          name: "alt",
+          title: "Texto alternativo",
+        },
+      ],
     },
     {
       name: "shortDescription",
