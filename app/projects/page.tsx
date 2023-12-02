@@ -1,10 +1,22 @@
+import { client } from "@/sanity/lib/client";
+
 import Link from "next/link";
 import Image from "next/image";
 
 import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
 
-export default function ProjectsPage() {
+export async function getData() {
+  const query = `*[_type == "blogPost"]`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+export default async function ProjectsPage() {
+  const data = await getData();
+
   return (
     <>
       <section className="container flex flex-wrap items-center justify-between gap-2 border-b border-custom-terciary py-6">
@@ -33,12 +45,15 @@ export default function ProjectsPage() {
       </section>
 
       <section className="container grid grid-cols-1 justify-items-center gap-4 pt-5 sm:grid-cols-3">
-        <CardProjects />
-        <CardProjects />
-        <CardProjects />
-        <CardProjects />
-        <CardProjects />
-        <CardProjects />
+        {data.map((item: any) => (
+          <CardProjects
+            key={item._id}
+            srcImage={item.projectImage.asset._ref}
+            name={item.projectName}
+            description={item.shortDescription}
+            redirect={item._id}
+          />
+        ))}
       </section>
     </>
   );

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getData } from "./projects/page";
+
 import Button from "@/components/button";
 import CustomIcon from "@/components/custom-icon";
 import ContainerItens from "@/components/container-itens";
@@ -10,7 +12,9 @@ import CardProjects from "@/components/card-projects";
 import Form from "@/components/form";
 import Socials from "@/components/socials";
 
-export default function Home() {
+export default async function Home() {
+  const data = await getData();
+
   return (
     <>
       <section className="container flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
@@ -118,9 +122,15 @@ export default function Home() {
         </div>
 
         <article className="my-8 w-full sm:flex sm:justify-between">
-          <CardProjects />
-          <CardProjects />
-          <CardProjects />
+          {data.map((item: any) => (
+            <CardProjects
+              key={item._id}
+              srcImage={item.projectImage.asset._ref}
+              name={item.projectName}
+              description={item.shortDescription}
+              redirect={item._id}
+            />
+          ))}
         </article>
 
         <div className="flex justify-center">
