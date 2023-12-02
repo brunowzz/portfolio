@@ -3734,6 +3734,12 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
 
+next-sanity-image@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-6.1.1.tgz#d4b7dedae4f89df88bf4012cd15113e78dfc2576"
+  dependencies:
+    "@sanity/image-url" "^1.0.2"
+
 next-sanity@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-7.0.1.tgz#f2d54be5f184d1bc723800018527db85306a81ed"
