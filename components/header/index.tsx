@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex h-24 w-full items-center justify-center rounded-lg shadow-2xl">
+    <header className="z-50 flex h-24 w-full items-center justify-center rounded-lg shadow-2xl">
       <section className="container flex items-center justify-between px-4">
         <Link href="/">
           <Image
@@ -67,7 +67,7 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="fixed left-0 top-0 flex h-full w-full flex-col items-center gap-5 bg-b-terciary transition-all duration-300 ease-in-out"
+            className="fixed left-0 top-0 z-50 flex h-full w-full flex-col items-center gap-5 bg-b-terciary transition-all duration-300 ease-in-out"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

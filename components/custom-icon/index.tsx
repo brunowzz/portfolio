@@ -2,7 +2,7 @@
 
 import { IconContext } from "react-icons";
 import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandNextjs, TbCloudDownload } from "react-icons/tb";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -12,6 +12,7 @@ import {
   FaSass,
   FaRegArrowAltCircleUp,
   FaCode,
+  FaArrowLeft,
 } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { SiStyledcomponents, SiTailwindcss } from "react-icons/si";
@@ -37,6 +38,8 @@ export default function CustomIcon({ icon, color, size }: Icon) {
     sass: FaSass,
     top: FaRegArrowAltCircleUp,
     code: FaCode,
+    arrowLeft: FaArrowLeft,
+    cloud: TbCloudDownload,
   };
 
   const IconComponent = iconMapping[icon];
