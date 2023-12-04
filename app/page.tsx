@@ -37,7 +37,7 @@ export default async function Home() {
 
           <span className="flex gap-6">
             <a href="url" download="/BrunoBarreiras.pdf">
-              <Button>
+              <Button bgButton>
                 <CustomIcon icon="curriculum" size="20" color="#fff" />
                 Currículo
               </Button>
@@ -94,12 +94,13 @@ export default async function Home() {
             </span>
 
             <p className="font-heebo text-base font-normal text-custom-primary lg:text-lg xl:text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
+              Me chamo Bruno, nascido em 2005, sou um dedicado desenvolvedor
+              front-end, formado pelo Vai na Web. Minha experiência abrange
+              projetos em diversos setores, incluindo arquitetura, assessoria
+              jurídica, saúde e prestação de serviços. Comprometido com a
+              entrega de soluções visuais e funcionais, estou sempre em busca de
+              aprimorar minhas habilidades para oferecer resultados excepcionais
+              em cada projeto que abraço.
             </p>
 
             <a href="url" download="/BrunoBarreiras.pdf">
@@ -122,7 +123,7 @@ export default async function Home() {
         </div>
 
         <article className="my-8 w-full sm:flex sm:justify-between">
-          {data.map((item: any) => (
+          {data.slice(0, 3).map((item: any) => (
             <CardProjects
               key={item._id}
               srcImage={item.projectImage.asset._ref}
@@ -135,7 +136,7 @@ export default async function Home() {
 
         <div className="flex justify-center">
           <Link href="/projects">
-            <Button>Ver Todos</Button>
+            <Button bgButton>Ver Todos</Button>
           </Link>
         </div>
       </section>
