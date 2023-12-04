@@ -20,11 +20,11 @@ export default function CardProjects({
   redirect,
 }: CardProps) {
   return (
-    <div className="mb-3 flex h-full flex-col gap-2 rounded-lg bg-b-terciary p-4 sm:w-48 md:w-56 lg:w-72 xl:w-96">
+    <div className="mb-3 flex w-full flex-col justify-between gap-2 rounded-lg bg-b-terciary p-4 sm:w-48 md:w-56 lg:w-72 xl:w-96">
       {srcImage && (
         <Image
           src={srcImage}
-          className="h-full w-full rounded-t-lg"
+          className="max-h-32 w-full rounded-t-lg object-cover"
           width={264}
           height={122}
           alt={name}
