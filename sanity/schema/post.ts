@@ -53,8 +53,13 @@ export default {
     {
       name: "fullDescription",
       title: "Descrição completa",
-      type: "text",
+      type: "array",
       description: "Uma descrição completa do projeto",
+      of: [
+        {
+          type: "block",
+        },
+      ],
     },
     {
       name: "projectLink",
