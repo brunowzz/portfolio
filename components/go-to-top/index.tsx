@@ -9,18 +9,19 @@ export default function GoToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scroll = window.scrollY;
-      console.log(scroll);
+      const scroll: number = window.scrollY;
 
-      if (scroll >= 150) {
-        setHeight(true);
-      } else {
-        setHeight(false);
-      }
+      scroll >= 150 ? setHeight(true) : setHeight(false);
+
+      // if (scroll >= 150) {
+      //   setHeight(true);
+      // } else {
+      //   setHeight(false);
+      // }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // função de limpeza
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [height]);
 
   return (

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CustomIcon from "@/components/custom-icon";
-import Disqus from "@/components/disqus";
+// import Disqus from "@/components/disqus";
 
 async function getData(id: string) {
   const query = `*[_type == "blogPost" && _id == $id]`;
@@ -93,7 +93,7 @@ export default async function IndividualProject({
         );
       })}
 
-      <Disqus id={data._id} name={data.projectName} />
+      {/* <Disqus id={data._id} name={data.projectName} /> */}
     </>
   );
 }
