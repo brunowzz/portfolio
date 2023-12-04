@@ -1,6 +1,3 @@
-// import { client } from "@/sanity/lib/client";
-// import { useNextSanityImage } from "next-sanity-image";
-
 "use client";
 
 import Image from "next/image";
@@ -27,7 +24,7 @@ export default function CardProjects({
       {srcImage && (
         <Image
           src={srcImage}
-          className="h-full w-full rounded-t-lg object-cover"
+          className="h-full w-full rounded-t-lg"
           width={264}
           height={122}
           alt={name}
@@ -47,7 +44,7 @@ export default function CardProjects({
         {description}
       </h4>
 
-      <Link href={`${redirect}`}>
+      <Link href={`/projects/${redirect}`}>
         <Button>Ver mais</Button>
       </Link>
     </div>

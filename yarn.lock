@@ -713,14 +713,7 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@portabletext/react@^3.0.0":
-  version "3.0.11"
-  resolved "https://registry.npmjs.org/@portabletext/react/-/react-3.0.11.tgz"
-  dependencies:
-    "@portabletext/toolkit" "^2.0.10"
-    "@portabletext/types" "^2.0.8"
-
-"@portabletext/react@^3.0.11":
+"@portabletext/react@^3.0.0", "@portabletext/react@^3.0.11":
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.0.11.tgz#c5f31d9ea990391a3850ba4dfd685373107d9a21"
   dependencies:
@@ -2069,6 +2062,10 @@ dir-glob@^3.0.1:
 direction@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/direction/-/direction-1.0.4.tgz"
+
+disqus-react@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.1.5.tgz#e844d040eed8f55467106e49d00e29d629e07043"
 
 dlv@^1.1.3:
   version "1.1.3"

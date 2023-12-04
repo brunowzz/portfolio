@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CustomIcon from "@/components/custom-icon";
+import Disqus from "@/components/disqus";
 
 async function getData(id: string) {
   const query = `*[_type == "blogPost" && _id == $id]`;
@@ -58,7 +59,6 @@ export default async function IndividualProject({
                   <strong className="font-bold">Time:</strong> {item.team}
                 </h2>
                 <h2 className="text-medium flex flex-wrap items-center gap-2 font-normal">
-                  <strong className="font-bold">Tecnologias:</strong>{" "}
                   {item.technologies.map((tec: string) => (
                     <span className="rounded bg-b-quaternary p-1" key={tec}>
                       {tec}
@@ -92,6 +92,8 @@ export default async function IndividualProject({
           </section>
         );
       })}
+
+      <Disqus id={data._id} name={data.projectName} />
     </>
   );
 }
