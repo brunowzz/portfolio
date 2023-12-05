@@ -16,21 +16,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: transparent;
+    background: #9265e6;
 }
 
 ::-webkit-scrollbar-track-piece {
-    background: transparent;
+    background: #9265e6;
     height: 5px;
 
-}
-
-.height {
-    min-height: 45rem;
 }
 
 @layer utilities {
