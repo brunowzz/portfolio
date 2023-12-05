@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,6 +18,10 @@ export default async function Home() {
 
   return (
     <>
+      <Head>
+        <title>Bruno Barreiras - Desenvolvedor Front-End</title>
+      </Head>
+
       <section className="container flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
         <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
           <h1 className="mb-3 font-kalam text-4xl font-normal text-custom-primary 2xl:text-6xl">
@@ -59,7 +64,7 @@ export default async function Home() {
           <CustomIcon icon="code" color="#9955E8" size="35" />
         </div>
 
-        <figure className="sm:w-[280px] lg:w-[450px] xl:w-[550px] 2xl:w-[650px]">
+        <figure className="h-full w-full sm:w-[280px] lg:w-[450px] xl:w-[550px] 2xl:w-[650px]">
           <Image
             src="/bro.svg"
             className="h-full w-full"
@@ -162,7 +167,7 @@ export default async function Home() {
               Envie-me um e-mail para{" "}
               <a
                 href="mailto:brunovbarreiras@gmail.com"
-                className="text-custom-terciary transition-all hover:opacity-80"
+                className="font-extrabold transition-all hover:opacity-80"
                 target="_blank"
               >
                 {" "}

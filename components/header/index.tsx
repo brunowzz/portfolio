@@ -54,9 +54,14 @@ const Header = () => {
           </Link>
         </nav>
 
+        <h3 id="menu-com-links" className="hidden">
+          Menu
+        </h3>
         <button
           className="flex flex-col gap-1 p-4 text-custom-primary md:hidden"
           onClick={toggleMenu}
+          name="menu com links de navegação"
+          aria-label="menu com links de navegação"
         >
           <span className="h-1 w-6 bg-custom-primary"></span>
           <span className="h-1 w-6 bg-custom-primary"></span>
