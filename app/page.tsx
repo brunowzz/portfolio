@@ -44,7 +44,7 @@ export default async function Home() {
           </p>
 
           <span className="flex gap-6">
-            <a href="url" download="/BrunoBarreiras.pdf">
+            <a href="/BrunoBarreiras.pdf" download={true}>
               <Button bgButton>
                 <CustomIcon icon="curriculum" size="20" color="#fff" />
                 Currículo
