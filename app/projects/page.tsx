@@ -2,12 +2,11 @@ import { client } from "@/sanity/lib/client";
 
 import Link from "next/link";
 import Image from "next/image";
-import Head from "next/head";
 
 import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
 
-export async function getData() {
+async function getData() {
   const query = `*[_type == "blogPost"]`;
 
   const data = await client.fetch(query);
@@ -20,15 +19,6 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <Head>
-        <title>Projetos | Bruno Barreiras - Desenvolvedor Front-End</title>
-        <meta
-          property="og:title"
-          content="Projetos | Bruno Barreiras - Desenvolvedor Front-End"
-          key="title"
-        />
-      </Head>
-
       <section className="container flex flex-wrap items-center justify-between gap-2 border-b border-custom-terciary py-6">
         <div className="flex flex-col gap-2">
           <Subtitle>Projetos</Subtitle>

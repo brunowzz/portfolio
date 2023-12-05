@@ -1,8 +1,15 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { getData } from "./projects/page";
+import { client } from "@/sanity/lib/client";
+
+async function getData() {
+  const query = `*[_type == "blogPost"]`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
 
 import Button from "@/components/button";
 import CustomIcon from "@/components/custom-icon";
@@ -18,10 +25,6 @@ export default async function Home() {
 
   return (
     <>
-      <Head>
-        <title>Bruno Barreiras - Desenvolvedor Front-End</title>
-      </Head>
-
       <section className="container flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
         <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
           <h1 className="mb-3 font-kalam text-4xl font-normal text-custom-primary 2xl:text-6xl">

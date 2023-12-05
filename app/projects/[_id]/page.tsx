@@ -4,7 +4,6 @@ import { urlFor } from "@/sanity/lib/sanity";
 
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 
 import CustomIcon from "@/components/custom-icon";
 
@@ -26,12 +25,6 @@ export default async function IndividualProject({
 
   return (
     <>
-      <Head>
-        <title>
-          {data.projectName} | Bruno Barreiras - Desenvolvedor Front-End
-        </title>
-      </Head>
-
       {data.map((item: any) => {
         return (
           <section
