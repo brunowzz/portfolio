@@ -75,18 +75,20 @@ export default async function IndividualProject({
               <h2 className="text-base font-bold">Links:</h2>
 
               <a href={item.projectLink} target="_blank">
-                <button className="flex h-8 w-52 items-center justify-between rounded-md bg-b-quaternary p-2">
+                <button className="flex h-full w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
                   Veja o projeto no ar
                   <CustomIcon icon="cloud" size="25" color="#fff" />
                 </button>
               </a>
 
-              <a href={item.githubLink} target="_blank">
-                <button className="flex h-8 w-52 items-center justify-between rounded-md bg-b-quaternary p-2">
-                  GitHub
-                  <CustomIcon icon="github" size="25" color="#fff" />
-                </button>
-              </a>
+              {item.githubLink && (
+                <a href={item.githubLink} target="_blank">
+                  <button className="flex h-8 w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
+                    GitHub
+                    <CustomIcon icon="github" size="25" color="#fff" />
+                  </button>
+                </a>
+              )}
             </section>
           </section>
         );
