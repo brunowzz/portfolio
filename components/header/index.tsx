@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+import CustomIcon from "../custom-icon";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -63,9 +65,7 @@ const Header = () => {
           name="menu com links de navegação"
           aria-label="menu com links de navegação"
         >
-          <span className="h-1 w-6 bg-custom-primary"></span>
-          <span className="h-1 w-6 bg-custom-primary"></span>
-          <span className="h-1 w-6 bg-custom-primary"></span>
+          <CustomIcon icon="menu" color="#fff" size="30" />
         </button>
       </section>
 
@@ -73,48 +73,57 @@ const Header = () => {
         {isOpen && (
           <motion.nav
             className="fixed left-0 top-0 z-50 flex h-full w-full flex-col items-center gap-5 bg-b-terciary transition-all duration-300 ease-in-out"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <button
-              className="self-end p-4 text-custom-primary"
+              className="mr-10 mt-10 self-end text-custom-primary"
               onClick={toggleMenu}
             >
-              X
+              <CustomIcon icon="close" color="#fff" size="30" />
             </button>
 
-            <Link
-              className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/"
-              onClick={() => setIsOpen(false)}
+            <motion.div
+              className="flex flex-col items-center gap-5"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
             >
-              Home
-            </Link>
+              <Link
+                className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
+                href="/"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
 
-            <Link
-              className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/#about"
-              onClick={() => setIsOpen(false)}
-            >
-              Sobre
-            </Link>
+              <Link
+                className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
+                href="/#about"
+                onClick={() => setIsOpen(false)}
+              >
+                Sobre
+              </Link>
 
-            <Link
-              className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/projects"
-              onClick={() => setIsOpen(false)}
-            >
-              Projetos
-            </Link>
+              <Link
+                className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
+                href="/projects"
+                onClick={() => setIsOpen(false)}
+              >
+                Projetos
+              </Link>
 
-            <Link
-              className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
-              href="/#contact"
-              onClick={() => setIsOpen(false)}
-            >
-              Contato
-            </Link>
+              <Link
+                className="font-heebo text-xl font-normal text-custom-primary transition hover:text-custom-terciary"
+                href="/#contact"
+                onClick={() => setIsOpen(false)}
+              >
+                Contato
+              </Link>
+            </motion.div>
           </motion.nav>
         )}
       </AnimatePresence>

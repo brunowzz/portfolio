@@ -2,7 +2,7 @@
 
 import { IconContext } from "react-icons";
 import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandNextjs, TbCloudDownload } from "react-icons/tb";
+import { TbBrandNextjs, TbCloudDownload, TbMenu2 } from "react-icons/tb";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -14,7 +14,7 @@ import {
   FaCode,
   FaArrowLeft,
 } from "react-icons/fa";
-import { IoDocumentTextOutline } from "react-icons/io5";
+import { IoDocumentTextOutline, IoCloseOutline } from "react-icons/io5";
 import { SiStyledcomponents, SiTailwindcss } from "react-icons/si";
 
 interface Icon {
@@ -40,6 +40,8 @@ export default function CustomIcon({ icon, color, size }: Icon) {
     code: FaCode,
     arrowLeft: FaArrowLeft,
     cloud: TbCloudDownload,
+    close: IoCloseOutline,
+    menu: TbMenu2,
   };
 
   const IconComponent = iconMapping[icon];
