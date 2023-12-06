@@ -16,7 +16,6 @@
     "@sanity/vision": "^3.20.2",
     "@types/react-icons": "^3.0.0",
     "aos": "^2.3.4",
-    "disqus-react": "^1.1.5",
     "framer-motion": "^10.16.5",
     "next": "14.0.3",
     "next-sanity": "^7.0.1",
