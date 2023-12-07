@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Kalam, Heebo } from "next/font/google";
 
 import Header from "@/components/header";
@@ -59,6 +60,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="scroll-smooth">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="Tjrd0sdGvC1pN279fmK8bFmWIbNggYvjRnsd9oKsLYk"
+        />
+      </Head>
+
       <body
         className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center px-6`}
       >
