@@ -1,15 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { client } from "@/sanity/lib/client";
-
-async function getData() {
-  const query = `*[_type == "blogPost"]`;
-
-  const data = await client.fetch(query);
-
-  return data;
-}
+import { getActiveProjects } from "@/lib/api";
 
 import Button from "@/components/button";
 import CustomIcon from "@/components/custom-icon";
@@ -21,14 +13,14 @@ import Form from "@/components/form";
 import Socials from "@/components/socials";
 
 export default async function Home() {
-  const data = await getData();
+  const data = await getActiveProjects();
 
   return (
     <>
       <section className="container flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
         <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
           <h1 className="mb-3 font-kalam text-4xl font-normal text-custom-primary 2xl:text-6xl">
-            Olá eu sou o{" "}
+            Olá eu sou o
             <strong className="text-gradient-text block font-bold">
               Bruno Barreiras
             </strong>

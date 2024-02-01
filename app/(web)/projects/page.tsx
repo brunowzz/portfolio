@@ -1,21 +1,14 @@
-import { client } from "@/sanity/lib/client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 
+import { getActiveProjects } from "@/lib/api";
+
 import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
-
-async function getData() {
-  const query = `*[_type == "blogPost"]`;
-
-  const data = await client.fetch(query);
-
-  return data;
-}
-
 export default async function ProjectsPage() {
-  const data = await getData();
+  const data = await getActiveProjects();
 
   return (
     <>

@@ -38,15 +38,17 @@ export default async function IndividualProject({
                     <CustomIcon icon="arrowLeft" color="#fff" size="24" />
                   </button>
                 </Link>
-
-                <figure className="flex w-full justify-center">
-                  <Image
-                    src={urlFor(item.projectImage.asset._ref).url()}
-                    width={300}
-                    height={350}
-                    alt={item.alt}
-                  />
-                </figure>
+                {item.projectImage.asset._ref && (
+                  <figure className="flex w-full justify-center">
+                    <Image
+                      src={urlFor(item.projectImage.asset._ref).url()}
+                      width={300}
+                      height={350}
+                      alt={item.alt}
+                      className="rounded-2xl shadow-2xl"
+                    />
+                  </figure>
+                )}
               </div>
 
               <div className="p-4 font-heebo text-custom-primary">
@@ -71,7 +73,7 @@ export default async function IndividualProject({
               </div>
             </section>
 
-            <section className="mt-4 flex h-full flex-col items-center gap-3 rounded-xl bg-b-secondary p-4 font-heebo text-custom-primary sm:mt-0">
+            {item.projectLink && <section className="mt-4 flex h-full flex-col items-center gap-3 rounded-xl bg-b-secondary p-4 font-heebo text-custom-primary sm:mt-0">
               <h2 className="text-base font-bold">Links:</h2>
 
               <a href={item.projectLink} target="_blank">
@@ -90,7 +92,8 @@ export default async function IndividualProject({
                 </a>
               )}
             </section>
-          </section>
+          }
+            </section>
         );
       })}
     </>
