@@ -5,7 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/sanity";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import CustomIcon from "@/components/custom-icon";
 import { useEffect, useState } from "react";
@@ -25,6 +25,7 @@ export default function IndividualProject({
   params: { _id: string };
 }) {
   const [info, setInfo] = useState([])
+  const { back } = useRouter()
 
   useEffect(() => {
     async function DataIndividualProject(){
@@ -46,11 +47,11 @@ export default function IndividualProject({
           >
             <section className="h-full w-full overflow-hidden rounded-xl bg-b-secondary">
               <div className="relative bg-gradient-to-r from-purple-700 via-purple-800 to-indigo-800 p-4">
-                <Link href="/projects">
-                  <button className="mb-3 flex h-9 w-12 items-center justify-center rounded bg-b-terciary md:absolute md:mb-0">
+               
+                  <button onClick={() => back()} className="mb-3 flex h-9 w-12 items-center justify-center rounded bg-b-terciary md:absolute md:mb-0">
                     <CustomIcon icon="arrowLeft" color="#fff" size="24" />
                   </button>
-                </Link>
+             
                 {item.projectImage.asset._ref && (
                   <figure className="flex w-full justify-center">
                     <Image

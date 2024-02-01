@@ -14,6 +14,7 @@ import Socials from "@/components/socials";
 
 export default async function Home() {
   const data = await getActiveProjects();
+  const curriculo: string = "https://docs.google.com/document/d/1N25WxL_HFLCqFqX-apuL1vt6OF6qitAKtym1SidgpHI/edit?usp=sharing"
 
   return (
     <>
@@ -36,7 +37,7 @@ export default async function Home() {
           </p>
 
           <span className="flex gap-6">
-            <a href="/BrunoBarreiras.pdf" download={true}>
+            <a href={curriculo} target="_blank">
               <Button bgButton>
                 <CustomIcon icon="curriculum" size="20" color="#fff" />
                 Currículo
