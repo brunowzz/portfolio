@@ -1,3 +1,5 @@
+"use client"
+
 import { PortableText } from "@portabletext/react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/sanity";
@@ -6,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CustomIcon from "@/components/custom-icon";
+import { useEffect, useState } from "react";
 
 async function getData(id: string) {
   const query = `*[_type == "blogPost" && _id == $id]`;
@@ -16,16 +19,26 @@ async function getData(id: string) {
   return response;
 }
 
-export default async function IndividualProject({
+export default function IndividualProject({
   params,
 }: {
   params: { _id: string };
 }) {
-  const data = await getData(params._id);
+  const [info, setInfo] = useState([])
+
+  useEffect(() => {
+    async function DataIndividualProject(){
+      const data = await getData(params._id);
+
+      setInfo(data)
+    }
+    DataIndividualProject()
+  }, [])
+
 
   return (
     <>
-      {data.map((item: any) => {
+      {info.map((item: any) => {
         return (
           <section
             key={item._id}

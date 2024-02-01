@@ -60,10 +60,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="scroll-smooth">
       <body
-        className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center px-6`}
+        className={`${kalam.variable} ${heebo.variable} bg-radial-gradient className="flex  min-h-screen flex-col items-center`}
       >
         <Header />
-        <main className="flex w-full flex-col items-center">{children}</main>
+        <main className="flex w-full flex-col items-center px-6 sm:px-0">{children}</main>
         <GoToTop />
         <Footer />
       </body>
