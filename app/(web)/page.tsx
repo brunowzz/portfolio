@@ -104,7 +104,7 @@ export default async function Home() {
               em cada projeto que abraço.
             </p>
 
-            <a href="/BrunoBarreiras.pdf" download={true}>
+            <a href={curriculo} target="_blank">
               <Button>
                 <CustomIcon icon="curriculum" size="20" color="#fff" />
                 Currículo
