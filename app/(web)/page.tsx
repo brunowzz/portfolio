@@ -11,10 +11,12 @@ import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
 import Form from "@/components/form";
 import Socials from "@/components/socials";
+import { TypeActiveProject } from "@/@types/type-active-project";
 
 export default async function Home() {
   const data = await getActiveProjects();
-  const curriculo: string = "https://docs.google.com/document/d/1N25WxL_HFLCqFqX-apuL1vt6OF6qitAKtym1SidgpHI/edit?usp=sharing"
+  const curriculo: string =
+    "https://docs.google.com/document/d/1N25WxL_HFLCqFqX-apuL1vt6OF6qitAKtym1SidgpHI/edit?usp=sharing";
 
   return (
     <>
@@ -124,7 +126,7 @@ export default async function Home() {
         </div>
 
         <article className="my-8 w-full sm:flex sm:justify-between">
-          {data.slice(0, 3).map((item: any) => (
+          {data.slice(0, 3).map((item: TypeActiveProject) => (
             <CardProjects
               key={item._id}
               srcImage={item.projectImage.asset._ref}

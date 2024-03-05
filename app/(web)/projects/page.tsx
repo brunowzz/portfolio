@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,6 +5,8 @@ import { getActiveProjects } from "@/lib/api";
 
 import Subtitle from "@/components/subtitle";
 import CardProjects from "@/components/card-projects";
+import { TypeActiveProject } from "@/@types/type-active-project";
+
 export default async function ProjectsPage() {
   const data = await getActiveProjects();
 
@@ -38,7 +38,7 @@ export default async function ProjectsPage() {
       </section>
 
       <section className="container grid grid-cols-1 justify-items-center gap-4 pt-5 sm:grid-cols-3">
-        {data.map((item: any) => (
+        {data.map((item: TypeActiveProject) => (
           <CardProjects
             key={item._id}
             srcImage={item.projectImage.asset._ref}

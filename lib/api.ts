@@ -1,20 +1,25 @@
 import { client } from "@/sanity/lib/client";
 import * as queries from "./sanityQueries";
+import { TypeActiveProject } from "@/@types/type-active-project";
 
 export async function getActiveProjects() {
   const result = await client.fetch(
     queries.queryProjects,
-    {},
-    { cache: "no-cache" },
+    { cache: "force-cache" },
+    { next: { tags: ["blogPost"] } },
   );
   return result;
 }
 
-export async function getActivieProjectsById({ id }: { id: string }) {
+export async function getActivieProjectsById({
+  _id,
+}: {
+  _id: TypeActiveProject;
+}) {
   const result = await client.fetch(
     queries.queryProjectsById,
-    { id },
-    { cache: "no-cache" },
+    { _id },
+    { cache: "force-cache", next: { tags: ["blogPost"] } },
   );
   return result;
 }
