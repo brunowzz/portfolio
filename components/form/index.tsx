@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@/components/button";
+import { TypeSendMail } from "@/@types/type-send-mail";
 
 const createSchema = z.object({
   name: z
@@ -45,7 +46,7 @@ export default function Form() {
     resolver: zodResolver(createSchema),
   });
 
-  async function sendEmail(data: any) {
+  async function sendEmail(data: TypeSendMail) {
     try {
       const emailData = {
         name: data.name,
