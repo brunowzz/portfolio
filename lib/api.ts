@@ -11,15 +11,13 @@ export async function getActiveProjects() {
   return result;
 }
 
-export async function getActivieProjectsById({
-  _id,
-}: {
-  _id: TypeActiveProject;
-}) {
-  const result = await client.fetch(
-    queries.queryProjectsById,
-    { _id },
-    { cache: "force-cache", next: { tags: ["blogPost"] } },
-  );
-  return result;
+export async function getActiveProjectsById(id: TypeActiveProject) {
+  const params = { id };
+
+  const response = await client.fetch(queries.queryProjectsById, params, {
+    cache: "force-cache",
+    next: { tags: ["blogPost, _id"] },
+  });
+
+  return response;
 }

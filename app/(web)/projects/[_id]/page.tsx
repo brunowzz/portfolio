@@ -1,45 +1,23 @@
-"use client"
-
 import { PortableText } from "@portabletext/react";
-import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/sanity";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import CustomIcon from "@/components/custom-icon";
-import { useEffect, useState } from "react";
+import { TypeActiveProject } from "@/@types/type-active-project";
+import Link from "next/link";
+import { getActiveProjects, getActiveProjectsById } from "@/lib/api";
 
-async function getData(id: string) {
-  const query = `*[_type == "blogPost" && _id == $id]`;
-  const params = { id };
-
-  const response = await client.fetch(query, params);
-
-  return response;
-}
-
-export default function IndividualProject({
-  params,
+export default async function IndividualProject({
+  params: { _id },
 }: {
-  params: { _id: string };
+  params: { _id: TypeActiveProject };
 }) {
-  const [info, setInfo] = useState([])
-  const { back } = useRouter()
-
-  useEffect(() => {
-    async function DataIndividualProject(){
-      const data = await getData(params._id);
-
-      setInfo(data)
-    }
-    DataIndividualProject()
-  }, [])
-
+  const data = await getActiveProjectsById(_id);
 
   return (
     <>
-      {info.map((item: any) => {
+      {data.map((item: TypeActiveProject) => {
         return (
           <section
             key={item._id}
@@ -47,11 +25,12 @@ export default function IndividualProject({
           >
             <section className="h-full w-full overflow-hidden rounded-xl bg-b-secondary">
               <div className="relative bg-gradient-to-r from-purple-700 via-purple-800 to-indigo-800 p-4">
-               
-                  <button onClick={() => back()} className="mb-3 flex h-9 w-12 items-center justify-center rounded bg-b-terciary md:absolute md:mb-0">
+                <Link href="/projects">
+                  <button className="mb-3 flex h-9 w-12 items-center justify-center rounded bg-b-terciary md:absolute md:mb-0">
                     <CustomIcon icon="arrowLeft" color="#fff" size="24" />
                   </button>
-             
+                </Link>
+
                 {item.projectImage.asset._ref && (
                   <figure className="flex w-full justify-center">
                     <Image
@@ -87,29 +66,39 @@ export default function IndividualProject({
               </div>
             </section>
 
-            {item.projectLink && <section className="mt-4 flex h-full flex-col items-center gap-3 rounded-xl bg-b-secondary p-4 font-heebo text-custom-primary sm:mt-0">
-              <h2 className="text-base font-bold">Links:</h2>
+            {item.projectLink && (
+              <section className="mt-4 flex h-full flex-col items-center gap-3 rounded-xl bg-b-secondary p-4 font-heebo text-custom-primary sm:mt-0">
+                <h2 className="text-base font-bold">Links:</h2>
 
-              <a href={item.projectLink} target="_blank">
-                <button className="flex h-full w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
-                  Veja o projeto no ar
-                  <CustomIcon icon="cloud" size="25" color="#fff" />
-                </button>
-              </a>
-
-              {item.githubLink && (
-                <a href={item.githubLink} target="_blank">
-                  <button className="flex h-8 w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
-                    GitHub
-                    <CustomIcon icon="github" size="25" color="#fff" />
+                <a href={item.projectLink} target="_blank">
+                  <button className="flex h-full w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
+                    Veja o projeto no ar
+                    <CustomIcon icon="cloud" size="25" color="#fff" />
                   </button>
                 </a>
-              )}
-            </section>
-          }
-            </section>
+
+                {item.githubLink && (
+                  <a href={item.githubLink} target="_blank">
+                    <button className="flex h-8 w-52 items-center justify-between rounded-md bg-b-quaternary p-2 transition-all hover:bg-b-terciary">
+                      GitHub
+                      <CustomIcon icon="github" size="25" color="#fff" />
+                    </button>
+                  </a>
+                )}
+              </section>
+            )}
+          </section>
         );
       })}
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const data = await getActiveProjects();
+  const activeProjectsById = data.map((id: TypeActiveProject) => ({
+    _id: id._id,
+  }));
+
+  return activeProjectsById;
 }
