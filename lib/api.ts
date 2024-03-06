@@ -16,7 +16,7 @@ export async function getActiveProjectsById(id: TypeActiveProject) {
 
   const response = await client.fetch(queries.queryProjectsById, params, {
     cache: "force-cache",
-    next: { tags: ["blogPost, _id"] },
+    next: { tags: ["blogPost"] },
   });
 
   return response;
