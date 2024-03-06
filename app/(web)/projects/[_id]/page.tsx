@@ -21,7 +21,7 @@ export default async function IndividualProject({
         return (
           <section
             key={item._id}
-            className="container min-h-[calc(100vh-6rem-5.25rem)] py-8 sm:flex sm:gap-4 lg:gap-12 xl:gap-60"
+            className="min-h-[calc(100vh-6rem-5.25rem)] py-8 sm:flex sm:gap-4 lg:gap-12 xl:gap-60"
           >
             <section className="h-full w-full overflow-hidden rounded-xl bg-b-secondary">
               <div className="relative bg-gradient-to-r from-purple-700 via-purple-800 to-indigo-800 p-4">

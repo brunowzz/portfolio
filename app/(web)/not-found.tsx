@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Error() {
   const [timer, setTimer] = useState(5);
+  const { replace } = useRouter();
 
   useEffect(() => {
     const interval = setInterval(function () {
@@ -13,7 +15,7 @@ export default function Error() {
         if (prev > 0) {
           return prev - 1;
         } else {
-          window.location.href = "/";
+          replace("/");
           clearInterval(interval);
           return 0;
         }

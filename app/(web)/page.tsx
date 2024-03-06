@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="container flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
+      <section className="flex min-h-[calc(100vh-6rem)] w-full flex-wrap-reverse items-end justify-center sm:items-center sm:justify-between sm:pt-5 lg:relative">
         <div className="flex flex-col items-center justify-center text-center sm:items-start sm:text-left">
           <h1 className="mb-3 font-kalam text-4xl font-normal text-custom-primary 2xl:text-6xl">
             Olá eu sou o
@@ -116,7 +116,7 @@ export default async function Home() {
         </section>
       </ContainerItens>
 
-      <section className="container mt-14 w-full">
+      <section className="mt-14 w-full">
         <div className="text-center">
           <Subtitle>Projetos</Subtitle>
 

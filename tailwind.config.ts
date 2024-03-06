@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          "2xl": "1400px",
+        },
+      },
       fontFamily: {
         kalam: ["var(--font-kalam)"],
         heebo: ["var(--font-heebo)"],
@@ -20,9 +27,6 @@ const config: Config = {
         "b-secondary": "#2C243B",
         "b-terciary": "#322844",
         "b-quaternary": "#8A42DB",
-      },
-      minHeight: {
-        "39": "39rem",
       },
     },
   },

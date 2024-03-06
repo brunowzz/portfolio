@@ -12,7 +12,7 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <section className="container flex flex-wrap items-center justify-between gap-2 border-b border-custom-terciary py-6">
+      <section className="flex flex-wrap items-center justify-between gap-2 border-b border-custom-terciary py-6">
         <div className="flex flex-col gap-2">
           <Subtitle>Projetos</Subtitle>
           <h1 className="font-heebo text-base font-medium text-custom-primary">
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
         </figure>
       </section>
 
-      <section className="container grid grid-cols-1 justify-items-center gap-4 pt-5 sm:grid-cols-3">
+      <section className="grid grid-cols-1 justify-items-center gap-4 pt-5 sm:grid-cols-3">
         {data.map((item: TypeActiveProject) => (
           <CardProjects
             key={item._id}
