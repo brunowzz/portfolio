@@ -4,7 +4,7 @@ import { TypeActiveProject } from "@/@types/type-active-project";
 
 export async function getActiveProjects() {
   const result = await client.fetch(queries.queryProjects, {
-    next: { tags: ["blogPost"] },
+    next: { tags: ["collection"] },
   });
   return result;
 }
@@ -13,7 +13,7 @@ export async function getActiveProjectsById(id: TypeActiveProject) {
   const params = { id };
 
   const response = await client.fetch(queries.queryProjectsById, params, {
-    next: { tags: ["blogPost"] },
+    next: { tags: ["collection"] },
   });
 
   return response;
