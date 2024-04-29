@@ -1,8 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="top">Portfólio</h1>
 
-## Getting Started
+<img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/gif.gif" alt="Imagem do projeto"/>
 
-First, run the development server:
+> 🔍 Explore o Portfólio.
+
+## :page_facing_up: Visão Geral
+
+Meu Portfólio é um projeto minuciosamente concebido para destacar e apresentar minhas habilidades ao mercado de trabalho. Este empreendimento full stack oferece um painel de administração intuitivo, permitindo-me gerenciar meus projetos de forma eficiente.
+
+Desenvolvido com uma abordagem tecnológica de ponta, o portfólio é alimentado pelas mais recentes ferramentas e frameworks. Utilizei o Next.js para garantir uma performance excepcional, enquanto o Tailwind CSS proporciona uma estética refinada e responsiva. Além disso, a integração de TypeScript confere robustez e segurança ao código.
+
+Para uma experiência visualmente envolvente, empreguei o Framer Motion, proporcionando interações fluidas e dinâmicas. E para garantir uma gestão de conteúdo eficaz, contei com o Sanity.io, oferecendo uma estrutura flexível e escalável para armazenar e organizar dados.
+
+## 📁 Páginas
+
+- **Home:** A página inicial apresenta uma breve introdução sobre mim, os 3 últimos projetos que desenvolvi e um formulário de contato.
+
+- **Projects:** A página de projetos exibe todos os meus projetos em forma de cards, que redirecionam para a página de detalhes de cada projeto.
+
+- **Projects/:id:** Esta página exibe todas as informações detalhadas do projeto selecionado, incluindo links para o repositório no GitHub e o projeto online, se aplicável.
+
+## 📁 Screens
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/1.png" alt="Imagem do projeto" width="400"/>
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/2.png" alt="Imagem do projeto" width="400"/>
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/3.png" alt="Imagem do projeto" width="400"/>
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/4.png" alt="Imagem do projeto" width="400"/>
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/5.png" alt="Imagem do projeto" width="400"/>
+    <img src="https://github.com/brunowzz/portfolio/blob/main/.github/screens/6.png" alt="Imagem do projeto" width="400"/>
+</div>
+
+## 🚀 Tecnologias
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Sanity.io](https://www.sanity.io/)
+
+## :white_check_mark: Requisitos
+
+Antes de iniciar :checkered_flag:, certifique-se de ter o [Node.js](https://nodejs.org/) e um navegador web instalados em sua máquina.
+
+## :checkered_flag: Iniciar
+
+
 
 ```bash
 npm run dev
@@ -14,23 +56,21 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Colaborador
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/brunowzz">
+        <img src="https://avatars.githubusercontent.com/u/94939630?v=4" width="160px;" alt="Foto do Bruno"/><br>
+        <sub>
+          <b>Bruno Vinícius</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📝 Licença
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto está sob licença. Consulte o arquivo [LICENSE](LICENSE.md) para obter mais detalhes.
